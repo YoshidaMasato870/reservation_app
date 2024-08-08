@@ -1,0 +1,24 @@
+<header class=top_header>
+    <div class=top_space>
+        <p class=company_name>ペンギン観光</p>
+        <% if user_signed_in? %>
+            <div id=dropdownContainer>
+                <button class=user_icon>
+                    <%= current_user.name %> ▼
+                </button>
+                    <div class=dropdown_menu id=dropdownMenu>
+                            <p><%= link_to "施設の新規登録"%></p>
+                            <p><%= link_to "予約済み一覧"%></p>
+                            <p><%= link_to "登録済み一覧"%></p>
+                            <p><%= link_to "アカウント設定", account_path %></p>
+                            <p><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+                    </div>
+            </div>
+        <% else %>
+            <p class=top_menu>
+                <%= link_to "ログイン", new_user_session_path %>
+                <%= link_to "新規登録", new_user_registration_path  %>
+            </p>
+        <% end %>
+    </div>
+</header>

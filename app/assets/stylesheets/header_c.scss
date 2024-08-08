@@ -1,0 +1,46 @@
+.top_header{
+    position: relative;
+    width: 100%;
+    background-color: rgb(120, 220, 210);
+}
+.top_space{
+    display: flex;
+    justify-content: space-between;
+}
+.company_name{
+    margin-left: 2%;
+    color: white;
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.top_menu{
+    margin-right: 3%;
+}
+.top_menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px ;
+}
+.user_icon{
+    position: absolute;
+    top:20px;
+    right: 50px;
+    width: auto;
+    height: 50px;
+}
+.dropdown_menu{
+    position: absolute;
+    display: none;
+    font-size: 15px;
+    background-color: whitesmoke;
+    font-weight: bolder;
+    top: 70px;
+    right: 40px;
+    padding: 5px;
+    z-index: 20;
+}
+.dropdown_menu a{
+    text-decoration: none;
+    color: black;
+}

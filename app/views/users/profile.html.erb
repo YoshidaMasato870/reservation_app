@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class= profile_title>設定</div>
+
+<div class= profile_container>
+    <div class=profile_menu>
+        <p><%= link_to "アカウント", account_path %></p>
+        <p class=profile_now>プロフィール</p>
+    </div>
+    <div class=profile_contents>
+        <div class=profile_table>
+            <div class=profile_table_title>プロフィール</div>
+            <div class=profile_edit><%= link_to "編集" %></div>
+        </div>
+        <div class=profile_info>
+            <div profile_column>
+                <p>アイコン画像<p>
+                <p>ユーザー名<p>
+                <p>自己紹介</p>
+            </div>
+            <div class=profile_data>
+                <p>icon</p>
+                <p><%= current_user.email %></p>
+                <p>intro</p>
+            </div>
+        </div>
+    </div>
+</div>
