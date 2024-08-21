@@ -1,0 +1,116 @@
+.profile_edit_title{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+.profile_edit_container{
+    display: flex;
+}
+.profile_edit_menu{
+    width: 15%;
+    font-size: 20px;
+    margin-left: 80px;
+    margin-right: 50px;
+    border: solid 1px;
+    padding: 10px 100px 10px 10px;
+}
+.profile_edit_menu p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.profile_edit_menu a{
+    text-decoration: none;
+    color: black;
+}
+.profile_edit_now{
+    color: orange;
+}
+.profile_edit_contents{
+    width: 70%;
+    display: block;
+}
+.profile_edit_table_title{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+.profile_edit_icon_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.profile_edit_icon_l{
+    width: 15%;
+    font-size: 20px;
+}
+.profile_edit_icon_d{
+    margin-left: 145px;
+}
+.profile_edit_user_icon{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+.profile_edit_icon_up{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.profile_edit_name_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.profile_edit_name_l{
+    width: 15%;
+    font-size: 20px;
+}
+.profile_edit_name_d{
+    width: 70%;
+    margin-left: 130px;
+}
+.edit_profile_form{
+    width: 70%;
+    height: 20px;
+}
+.profile_edit_introduction_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.profile_edit_introduction_l{
+    width: 15%;
+    font-size: 20px;
+}
+.profile_edit_introduction_d{
+    width: 80%;
+    margin-left: 140px;
+}
+.edit_form_intro{
+    width: 80%;
+    height: 300px;
+}
+.profile_edit_action{
+    position: relative;
+    margin-right: 50px;
+}
+.profile_edit_action a{
+    text-decoration: none;
+}
+.profile_edit_cancel{
+    position: absolute;
+    right: 75px;
+    font-size: 20px;
+    color: black;
+    padding: 5px;
+    border: solid;
+    border-radius: 5px;
+}
+.profile_edit_update{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: orange;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+}

@@ -49,6 +49,38 @@
 .profile_edit{
     font-size: 20px;
 }
-.profile_info{
+.profile_data{
+    font-size: 20px;
+} 
+.profile_icon{
     display: flex;
+}
+.profile_icon p{
+    font-size: 20px;
+}
+.profile_icon_d{
+    margin-left: 50px;
+}
+.profile_user_icon{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+.profile_name{
+    display: flex;
+}
+.profile_name p{
+    font-size: 20px;
+}
+.profile_name_d{
+    margin-left: 135px;
+}
+.profile_introduction{
+    display: flex;
+}
+.profile_introduction p{
+    font-size: 20px;
+}
+.profile_introduction_d{
+    margin-left: 90px;
 }

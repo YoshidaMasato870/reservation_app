@@ -4,7 +4,12 @@
         <% if user_signed_in? %>
             <div id=dropdownContainer>
                 <button class=user_icon>
-                    <%= current_user.name %> ▼
+                    <% if current_user.user_icon? %>
+                        <%= image_tag current_user.user_icon_url, class: "header_user_icon" %>
+                    <% else %>
+                        <%= image_tag 'default-icon.png' ,class: 'header_icon_def' %>
+                    <% end %>
+                    <span class=header_user_now><%= current_user.name %> ▼</span>
                 </button>
                     <div class=dropdown_menu id=dropdownMenu>
                             <p><%= link_to "施設の新規登録"%></p>

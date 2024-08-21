@@ -10,19 +10,27 @@
     <div class=profile_contents>
         <div class=profile_table>
             <div class=profile_table_title>プロフィール</div>
-            <div class=profile_edit><%= link_to "編集" %></div>
+            <div class=profile_edit><%= link_to "編集", profile_edit_path %></div>
         </div>
-        <div class=profile_info>
-            <div profile_column>
-                <p>アイコン画像<p>
-                <p>ユーザー名<p>
-                <p>自己紹介</p>
-            </div>
-            <div class=profile_data>
-                <p>icon</p>
-                <p><%= current_user.email %></p>
-                <p>intro</p>
-            </div>
+        <div class=profile_icon>
+            <p>アイコン画像<p>
+            <p class=profile_icon_d>
+                <% if current_user.user_icon? %>
+                    <%= image_tag current_user.user_icon_url, class: "profile_user_icon" %>
+                <% else %>
+                    <%= image_tag 'default-icon.png' %>
+                <% end %>
+            </p>
+        </div>
+        <div class=profile_name>
+            <p>名前</p>
+            <p class=profile_name_d><%= current_user.name %></p>
+        </div>
+        <div class=profile_introduction>
+            <p>自己紹介</p>
+            <p class=profile_introduction_d>
+                <%= current_user.introduction %>
+            </p>
         </div>
     </div>
 </div>
