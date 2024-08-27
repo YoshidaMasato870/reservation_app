@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile'
   get '/profile/edit', to: 'users#edit'
   patch '/profile/update', to: 'users#update'
+  get '/reserved', to: 'reservations#reserved'
+  resources :rooms
+  resources :reservations
 end

@@ -1,6 +1,17 @@
 ja:
   activerecord:
     attributes:
+      reservation:
+        check_in: チェックイン
+        check_out: チェックアウト
+        persons: 人数
+
+      room:
+        name: 施設名
+        info: 施設詳細
+        price: 料金
+        address: 住所
+        image: 施設画像
       user:
         user_icon: アイコン画像
         name: 名前

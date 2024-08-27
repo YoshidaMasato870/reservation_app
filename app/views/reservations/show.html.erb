@@ -1,0 +1,72 @@
+<%= render "shared/header" %>
+
+<div class=reserv_show_search_area>
+    <%= form_with url: reservations_url, method: :get,
+    local: true do |f| %>
+    <%= f.text_field :address,
+        placeholder: "エリアを入力",
+        class: "reserv_show_search_by_area" %>
+    <%= f.text_field :info,
+        placeholder: "キーワードを入力",
+        class: "reserv_show_search_by_info" %>
+    <%= f.submit "検索", class: "reserv_show_search_by_area_b" %>
+    <% end %>
+</div>
+
+<div class=reserv_show_container>
+    <%= link_to "←戻る", :back, class: "reserv_show_to_index" %>
+    <div class=reserv_show_data>
+        <div class=reserv_show_image_area>
+            <% if @room.image? %>
+                <%= image_tag @room.image_url, class: "reserv_show_image" %>
+            <% else %>
+                <%= image_tag "default-room.png", class: "reserv_show_image" %>
+            <% end %>
+        </div>
+        <div class=reserv_show_info_area>
+            <div class=reserv_show_info_top>
+                <p class=reserv_show_name_d>
+                    <%= @room.name %>
+                </p>
+                <p class=reserv_show_price_d>
+                    ¥<%= @room.price %>〜
+                </p>
+            </div>
+            <p class=reserv_show_address><%= @room.address %></p>
+            <p class=reserv_show_info><%= @room.info %></p>
+
+            <%= form_with model: @reservation do |f| %>
+                <div class=reserv_show_form_area>
+                    <div class=reserv_show_check_in>  
+                        <p><%= f.label :check_in %></p>
+                        <p><%= f.date_field :check_in %></p>
+                    </div>
+                    <div class=reserv_show_check_out>  
+                        <p><%= f.label :check_out %></p>
+                        <p><%= f.date_field :check_out %></p>
+                    </div>
+                    <div class=reserv_show_persons>  
+                        <p><%= f.label :persons %></p>
+                        <p><%= f.text_field :persons,
+                            placeholder: "人数を入力" %>
+                        </p>
+                    </div>
+                    <% if user_signed_in? %>
+                            <%= f.hidden_field :user_id, value: current_user.id %>
+                            <%= f.hidden_field :image, value: @room.image %>
+                            <%= f.hidden_field :name, value: @room.name %>
+                            <%= f.hidden_field :info, value: @room.info %>
+                            <%= f.hidden_field :price, value: @room.price %>
+                    <% end %>
+                </div>
+                <div class=reserv_show_action>
+                    <% if user_signed_in? %>
+                        <%= f.submit "予約する" %>
+                    <% else %>
+                        <%= link_to "ログイン", new_user_session_path, class: "reserv_show_to_login" %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

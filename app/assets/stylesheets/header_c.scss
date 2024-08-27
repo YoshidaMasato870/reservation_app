@@ -45,6 +45,7 @@
 .dropdown_menu{
     position: absolute;
     display: none;
+    border-radius: 5px;
     font-size: 15px;
     background-color: whitesmoke;
     font-weight: bolder;
@@ -56,4 +57,11 @@
 .dropdown_menu a{
     text-decoration: none;
     color: black;
+}
+.header_logout{
+    border: none;
+    background-color: whitesmoke;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 0;
 }

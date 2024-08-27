@@ -1,0 +1,49 @@
+<%= render "shared/header" %>
+
+<div class=rooms_edit_container>
+<div class=rooms_edit_title>施設を編集</div>
+<%= form_with model: @room do |f| %>
+    <div class=rooms_edit_name_area>
+        <%= f.label :name,
+            class: "rooms_edit_l" %>
+        <span class=red_asterisk>*</span>
+        <%= f.text_field :name,
+            placeholder: "施設名を入力してください",
+            class: "rooms_edit_name_form" %>
+    </div>
+    <div class=rooms_edit_info_area>
+        <%= f.label :info,
+            class: "rooms_edit_l" %>
+        <span class=red_asterisk>*</span>
+        <%= f.text_area :info,
+            placeholder: "施設情報を入力してください",
+            class: "rooms_edit_info_form" %>
+    </div>
+    <div class=rooms_edit_price_area>
+        <%= f.label :price,
+            class: "rooms_edit_l" %>
+        <span class=red_asterisk>*</span>
+        <%= f.text_field :price,
+            placeholder: "1日あたりの宿泊料金を入力してください",
+            class: "rooms_edit_price_form" %>
+    </div>
+    <div class=rooms_edit_address_area>
+        <%= f.label :address,
+            class: "rooms_edit_l" %>
+        <span class=red_asterisk>*</span>
+        <%= f.text_field :address,
+            placeholder: "住所を入力してください",
+            class: "rooms_edit_address_form"  %>
+    </div>
+    <div class=rooms_edit_image_area>
+        <%= f.label :image,
+            class: "rooms_edit_l" %>
+        <%= f.file_field :image, class: "rooms_edit_image_form" %>
+    </div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class=rooms_edit_action>
+        <%= link_to "キャンセル", rooms_path, class: "rooms_edit_cancel" %>
+        <%= f.submit "保存", class: "rooms_edit_submit" %>
+    </div>
+<% end %>
+</div>
