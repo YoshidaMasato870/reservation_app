@@ -1,5 +1,10 @@
 <%= render "shared/header" %>
 
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @reservation %>
+</div>
+
 <div class=reserv_edit_container>
     <div class=reserv_edit_title>再予約する</div>
         <div class=reserv_edit_area>
@@ -15,6 +20,7 @@
                 <div class=reserv_edit_price>¥<%= @reservation.price %>〜</div>
             </div>
             <div class=reserv_edit_info><%= @reservation.info %></div>
+                        
             <div>
                 <%= form_with model: @reservation do |f| %>
                     <%= f.label :check_in %>

@@ -9,17 +9,20 @@ class ReservationsController < ApplicationController
         elsif Room.where(info: @info).exists?
             @records = Room.where(info: @info)
         else
+            flash[:notice] = "条件にあてはまるものがないので全件を表示します"
             @records = Room.all
         end
     end
 
     def create
         @reservation = Reservation.new(params.require(:reservation)
-        .permit(:image, :name, :info, :price, :check_in, :check_out, :persons, :user_id))
+        .permit(:image, :name, :info, :price, :check_in, :check_out, :persons, :user_id, :room_id))
         if @reservation.save
+            flash[:notice] = "予約を作成しました"
             redirect_to new_reservation_path
         else
-            redirect_to reservations_path
+            flash[:alert] = "予約に失敗しました"
+            redirect_to reservation_path(@reservation.room_id)
         end
     end
 
@@ -40,8 +43,10 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.find(params[:id])
         if @reservation.update(params.require(:reservation)
             .permit(:check_in, :check_out, :persons, :created_at))
+            flash[:notice] = "再予約しました"
             redirect_to new_reservation_path
         else
+            flash.now[:alert] = "再予約できませんでした"
             render "edit"
         end
     end
@@ -49,6 +54,7 @@ class ReservationsController < ApplicationController
     def destroy
         @reservation = Reservation.find(params[:id])
         @reservation.destroy
+        flash[:notice] = "予約を削除しました"
         redirect_to new_reservation_path
     end
 end

@@ -1,5 +1,10 @@
 <%= render "shared/header" %>
 
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @room %>
+</div>
+
 <div class=rooms_new_container>
     <div class=rooms_new_title>新規登録</div>
     

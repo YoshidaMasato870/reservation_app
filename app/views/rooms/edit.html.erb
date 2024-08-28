@@ -1,9 +1,14 @@
 <%= render "shared/header" %>
 
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @room %>
+</div>
+
 <div class=rooms_edit_container>
-<div class=rooms_edit_title>施設を編集</div>
-<%= form_with model: @room do |f| %>
-    <div class=rooms_edit_name_area>
+    <div class=rooms_edit_title>施設を編集</div>
+    <%= form_with model: @room do |f| %>
+        <div class=rooms_edit_name_area>
         <%= f.label :name,
             class: "rooms_edit_l" %>
         <span class=red_asterisk>*</span>

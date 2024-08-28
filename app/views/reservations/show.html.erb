@@ -13,6 +13,11 @@
     <% end %>
 </div>
 
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @reservation %>
+</div>
+
 <div class=reserv_show_container>
     <%= link_to "←戻る", :back, class: "reserv_show_to_index" %>
     <div class=reserv_show_data>
@@ -57,6 +62,7 @@
                             <%= f.hidden_field :name, value: @room.name %>
                             <%= f.hidden_field :info, value: @room.info %>
                             <%= f.hidden_field :price, value: @room.price %>
+                            <%= f.hidden_field :room_id, value: @room.id %>
                     <% end %>
                 </div>
                 <div class=reserv_show_action>

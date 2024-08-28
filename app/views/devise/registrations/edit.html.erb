@@ -1,5 +1,10 @@
 <%= render "shared/header" %>
 
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @user %>
+</div>
+
 <div class=edit_title>設定</div>
 
 <div class=edit_container>

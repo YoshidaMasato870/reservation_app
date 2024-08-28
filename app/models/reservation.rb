@@ -7,12 +7,12 @@ class Reservation < ApplicationRecord
     validate :validate_past, :not_past, if: :not_nil
         def validate_past
             if check_in > check_out
-                errors.add(:check_in, "はチェックアウトより前にできません")
+                errors.add(:check_out, "はチェックアウトより前にできません")
             end
         end
         def not_past
             if check_in < Date.current
-                errors.add(:check_in, "は今日より前にできません")
+                errors.add(:check_in, "は本日より前にはできません")
             end
         end
         def not_nil

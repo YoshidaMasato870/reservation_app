@@ -9,6 +9,7 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.date :check_out
       t.integer :persons
       t.string :user_id
+      t.string :room_id
 
       t.timestamps
     end
