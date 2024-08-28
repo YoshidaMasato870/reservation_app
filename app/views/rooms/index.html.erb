@@ -1,5 +1,7 @@
 <%= render "shared/header" %>
 
+<%= render "shared/flash_message" %>
+
 <div class=rooms_index_container>
     <div class=rooms_index_title>登録済み一覧</div>
     <table class=rooms_index_table>
@@ -21,6 +23,9 @@
                     </td>
                     <td><%= room.name %></td><td><%= room.info %></td>
                     <td><%= room.price %></td><td><%= room.created_at.to_s(:datetime_jp) %></td>
+                    <td>
+                        <%= link_to "詳細", reservation_path(room), class: "rooms_index_about" %>
+                    </td>
                     <td>
                         <%= link_to "編集", [:edit, room], class: "rooms_index_edit" %>
                     </td>
