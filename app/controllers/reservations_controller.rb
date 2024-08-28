@@ -14,6 +14,10 @@ class ReservationsController < ApplicationController
         end
     end
 
+    def confirm
+        @reservation = Reservation.new(reservation_params)
+    end
+
     def create
         @reservation = Reservation.new(params.require(:reservation)
         .permit(:image, :name, :info, :price, :check_in, :check_out, :persons, :user_id, :room_id))

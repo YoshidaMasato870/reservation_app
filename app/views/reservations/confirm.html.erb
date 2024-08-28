@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+
+<div class=confirm_container>
+    <div class=confirm_title>予約内容の確認</div>
+    <div class=confirm_check_in_area>
+        <p>チェックイン</p>
+        </div>
+    <div class=confirm_check_out_area>
+        <p>チェックアウト</p>
+    </div>
+    <div class=confirm_date_area>
+        <p>日数</p>
+    </div>
+    <div class=confirm_persons_area>
+        <p>人数</p>
+    </div>
+    <div class=confirm_total_price_area>
+        <p>お支払い金額</p>
+    </div>
+    <p>上記内容で正しければ「確定」ボタンを押して下さい</p>
+    <%= form_with model: @reservation do |f|%>
+        <%= f.submit "予約を確定" %>
+    <% end %></br>
+    <%= link_to "キャンセル", :back %>
+</div>

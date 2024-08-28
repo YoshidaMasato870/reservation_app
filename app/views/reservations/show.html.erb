@@ -40,7 +40,8 @@
             <p class=reserv_show_address><%= @room.address %></p>
             <p class=reserv_show_info><%= @room.info %></p>
 
-            <%= form_with model: @reservation do |f| %>
+            <%= form_with model: @reservation, url: confirm_reservations_path,
+            local: true do |f| %>
                 <div class=reserv_show_form_area>
                     <div class=reserv_show_check_in>  
                         <p><%= f.label :check_in %></p>

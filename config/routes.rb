@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   patch '/profile/update', to: 'users#update'
   get '/reserved', to: 'reservations#reserved'
   resources :rooms
-  resources :reservations
+  resources :reservations do
+    collection do
+      post :confirm
+    end
+  end
 end
