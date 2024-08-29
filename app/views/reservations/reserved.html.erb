@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<%= render "shared/flash_message" %>
+
+<div class=reserved_container>
+    <div class=reserved_title>予約済み一覧
+    </div>
+    <table class=reserved_table>
+        <thead>
+            <tr>
+                <th>画像</th><th>施設名</th>
+                <th>紹介文</th><th>合計料金</th>
+                <th>チェックイン</th><th>チェックアウト</th>
+                <th>予約確定日時</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @reservation.each do |f| %>
+                <tr>
+                    <td>
+                        <% if f.image? %>
+                            <%= image_tag f.image, class:"reserved_image" %>
+                        <% else %>
+                            <%= image_tag "default-room.png",class:"reserved_image"  %>
+                        <% end %>
+                    </td>
+                    <td><%= f.name %></td>
+                    <td><%= f.info %></td>
+                    <td><%= f.price*f.persons*(f.check_out-f.check_in).to_i %></td>
+                    <td><%= f.check_in %></td>
+                    <td><%= f.check_out %></td>
+                    <td><%= f.created_at.to_s(:datetime_jp_d).to_s  %></td>
+                    <td><%= link_to "再予約する", [:edit, f], class: "reserved_to_edit" %></td>
+                    <td><%= button_to "予約を削除", reservation_path(f.id), method: :delete %></td>
+                </tr>
+            <% end %>
+        <tbody>
+    </table>
+</div>

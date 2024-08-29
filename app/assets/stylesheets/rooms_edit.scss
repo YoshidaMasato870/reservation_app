@@ -1,0 +1,79 @@
+.rooms_edit_container{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+.rooms_edit_title{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.red_asterisk{
+    color: red;
+}
+.rooms_edit_name_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.rooms_edit_l{
+    font-size: 20px;
+}
+.rooms_edit_name_form{
+    width: 65%;
+    height: 25px;
+    margin-left: 70px;
+}
+.rooms_edit_info_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.rooms_edit_info_form{
+    width: 65%;
+    height: 50px;
+    margin-left: 50px;
+}
+.rooms_edit_price_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.rooms_edit_price_form{
+    width: 65%;
+    height: 25px;
+    margin-left: 90px;
+}
+.rooms_edit_address_area{
+    display: flex;
+    margin-bottom: 20px;
+}
+.rooms_edit_address_form{
+    width: 65%;
+    height: 25px;
+    margin-left: 90px;
+}
+.rooms_edit_image_area{
+    display: flex;
+}
+.rooms_edit_image_form{
+    margin-left: 50px;
+}
+.rooms_edit_action{
+    position: absolute;
+    right: 25%;
+}
+.rooms_edit_action a{
+    text-decoration: none;
+    color: black;
+}
+.rooms_edit_cancel{
+    font-size: 20px ;
+    padding: 10px;
+    border: solid;
+    border-radius: 5px;
+}
+.rooms_edit_submit{
+    font-size: 20px;
+    padding: 7px;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}

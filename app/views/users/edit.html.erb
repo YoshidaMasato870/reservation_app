@@ -1,0 +1,63 @@
+<%= render "shared/header" %>
+
+<div class= profile_edit_title>設定</div>
+
+<div class= profile_edit_container>
+    <div class=profile_edit_menu>
+        <p><%= link_to "アカウント", account_path %></p>
+        <p class=profile_edit_now>プロフィール</p>
+    </div>
+
+    <div class=profile_edit_contents>
+        <p class=profile_edit_table_title>プロフィール</p>
+        
+        <%= form_with model: @user, url: profile_update_path do |f| %>
+        <div class=profile_edit_icon_area>
+            <div class=profile_edit_icon_l>
+                <%= f.label :user_icon %>
+            </div>
+            <div class=profile_edit_icon_d>
+                <% if current_user.user_icon? %>
+                    <%= image_tag current_user.user_icon_url, class: "profile_edit_user_icon" %>
+                <% else %>
+                    <%= image_tag "default-icon.png" %>
+                <% end %>
+            </div>
+            <div class=profile_edit_icon_up>
+                <%= f.file_field :user_icon %>
+            </div>
+        </div>
+        <div class=profile_edit_name_area>
+            <div class=profile_edit_name_l>
+                <%= f.label :name %>
+            </div>
+            <div class=profile_edit_name_d>
+                <%= f.text_field :name,
+                class: "edit_profile_form",
+                placeholder: "ユーザー名を入力してください",
+                autofocus: true %>
+            </div>
+        </div>
+        <div class=profile_edit_introduction_area>
+            <div class=profile_edit_introduction_l>
+                <%= f.label :introduction %>
+            </div>
+            <div class=profile_edit_introduction_d>
+                <%= f.text_area :introduction,
+                class: "edit_form_intro",
+                placeholder: "自己紹介を入力してください",
+                autofocus: true %>
+            </div>
+        </div>
+
+        <div class=profile_edit_action>
+            <div>
+                <%= link_to "キャンセル", profile_path, class: "profile_edit_cancel" %>
+            </div>
+            <div>
+                <%= f.submit "保存", class: "profile_edit_update" %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>

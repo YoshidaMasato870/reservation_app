@@ -1,0 +1,68 @@
+<%= render "shared/header" %>
+
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @user %>
+</div>
+
+<div class=edit_title>設定</div>
+
+<div class=edit_container>
+  <div class=edit_menu>
+  <p class=edit_now>アカウント</p>
+  <p>プロフィール</p>
+  </div>
+
+  <div class=edit_contents>
+    <div class=edit_title><p>アカウント</p></div>
+
+    <div class=edit_zone>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div>
+          <%= f.label :email, class: "edit_form_label" %><br />
+          <%= f.email_field :email,
+            class: "edit_form",
+            placeholder: "変更後のメールアドレスを入力してください",
+            autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div>
+          <%= f.label :password, class: "edit_form_label" %> <br />
+          <p>*変更する場合のみ</p>
+          <%= f.password_field :password,
+            class: "edit_form",
+            placeholder: "変更後のパスワードを入力してください",
+            autocomplete: "new-password" %>
+        </div>
+
+        <div>
+          <%= f.label :password_confirmation, class: "edit_form_label" %><br />
+          <p>*変更する場合のみ</p>
+          <%= f.password_field :password_confirmation,
+            class: "edit_form",
+            placeholder: "変更後のパスワードを入力してください",
+            autocomplete: "new-password" %>
+        </div>
+
+        <div>
+          <%= f.label :current_password, class: "edit_form_label" %> <br />
+          <%= f.password_field :current_password,
+            class: "edit_form",
+            placeholder: "現在のパスワードを入力してください",
+            autocomplete: "current-password" %>
+        </div>
+
+        <div class=edit_actions>
+          <%= link_to "キャンセル", account_path %>
+          <%= f.submit "登録", class: "edit_submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

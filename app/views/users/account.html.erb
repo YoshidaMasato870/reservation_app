@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<%= render "shared/flash_message" %>
+
+<div class= account_title>設定</div>
+
+<div class= account_container>
+    <div class=account_menu>
+        <p class=account_now>アカウント</p>
+        <p><%= link_to "プロフィール", profile_path %></p>
+    </div>
+    <div class=account_contents>
+        <div class=account_table>
+            <div class=account_table_title>アカウント</div>
+            <div class=account_edit><%= link_to "編集", edit_user_registration_path %></div>
+        </div>
+        <div class=account_info>
+            <div class=account_column>
+                <p>メールアドレス</p>
+                <p>パスワード</p>
+            </div>
+            <div>
+                <p><%= current_user.email %></p>
+                <p>*********</p>
+            </div>
+        </div>
+    </div>
+</div>

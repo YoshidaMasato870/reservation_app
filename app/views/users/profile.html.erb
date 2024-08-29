@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<%= render "shared/flash_message" %>
+
+<div class= profile_title>設定</div>
+
+<div class= profile_container>
+    <div class=profile_menu>
+        <p><%= link_to "アカウント", account_path %></p>
+        <p class=profile_now>プロフィール</p>
+    </div>
+    <div class=profile_contents>
+        <div class=profile_table>
+            <div class=profile_table_title>プロフィール</div>
+            <div class=profile_edit><%= link_to "編集", profile_edit_path %></div>
+        </div>
+        <div class=profile_icon>
+            <p>アイコン画像<p>
+            <p class=profile_icon_d>
+                <% if current_user.user_icon? %>
+                    <%= image_tag current_user.user_icon_url, class: "profile_user_icon" %>
+                <% else %>
+                    <%= image_tag 'default-icon.png' %>
+                <% end %>
+            </p>
+        </div>
+        <div class=profile_name>
+            <p>名前</p>
+            <p class=profile_name_d><%= current_user.name %></p>
+        </div>
+        <div class=profile_introduction>
+            <p>自己紹介</p>
+            <p class=profile_introduction_d>
+                <%= current_user.introduction %>
+            </p>
+        </div>
+    </div>
+</div>

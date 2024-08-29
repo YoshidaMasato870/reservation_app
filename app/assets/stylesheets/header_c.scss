@@ -1,0 +1,67 @@
+.top_header{
+    position: relative;
+    width: 100%;
+    background-color: rgb(120, 220, 210);
+}
+.top_space{
+    display: flex;
+    justify-content: space-between;
+}
+.company_name{
+    margin-left: 2%;
+    color: white;
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.top_menu{
+    margin-right: 3%;
+}
+.top_menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px ;
+}
+.user_icon{
+    position: absolute;
+    top:20px;
+    right: 50px;
+    width: auto;
+    height: 50px;
+}
+.header_user_icon{
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+}
+.header_icon_def{
+    height: 30px;
+    width: 30px;
+}
+.header_user_now{
+    font-size: 15px;
+    vertical-align: 10px;
+}
+.dropdown_menu{
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: whitesmoke;
+    font-weight: bolder;
+    top: 70px;
+    right: 40px;
+    padding: 5px;
+    z-index: 20;
+}
+.dropdown_menu a{
+    text-decoration: none;
+    color: black;
+}
+.header_logout{
+    border: none;
+    background-color: whitesmoke;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 0;
+}

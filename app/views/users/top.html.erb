@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<%= image_tag 'kegon.jpeg', class: "background_top" %>
+
+<div class=top_flash_area>
+  <%= render "shared/flash_message" %>
+</div>
+<div class=top_message>
+    <p class=top_message_space>さぁ　旅に出かけよう!</p>
+    <p>新しい発見が君を待っている</p>
+</div>
+
+<div class=top_container>
+    <%= form_with url: reservations_url, method: :get,
+      local: true do |f| %>
+        <%= f.text_field :address,
+          placeholder: "エリアを入力",
+          class: "top_search" %>
+        <%= f.submit "検索" %>
+    <% end %>
+</div>
+
+<div class=top_recomend>おすすめのエリア</div>
+
+<div class=recomend_area>
+    <div class=tokyo>
+      <%= link_to image_tag("tokyo.jpg", class: "sample_image"), reservations_path(address: "東京") %>
+      <p class=sample_name>東京</p>
+    </div>
+    <div class=osaka>
+      <%= link_to image_tag("osaka.jpg", class: "sample_image"), reservations_path(address: "大阪")  %>
+      <p class=sample_name>大阪</p>
+    </div>
+    <div class=kyoto>
+      <%= link_to image_tag("kyoto.jpg", class: "sample_image"), reservations_path(address: "京都")  %>
+      <p class=sample_name>京都</p>
+    </div>
+    <div class=sapporo>
+      <%= link_to image_tag("sapporo.jpg", class: "sample_image"), reservations_path(address: "札幌")  %>
+      <p class=sample_name>札幌</p>
+    </div>
+</div>
+
+
+<footer class=top_footer>
+  <p class=company_name2>ペンギン観光</p>
+  <p class=top_footer_copyright>Copyright © Pengin Tour Campany 2024 ALL rights reserved</p>
+</footer>
+
+

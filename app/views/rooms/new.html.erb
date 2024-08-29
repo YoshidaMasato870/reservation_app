@@ -1,0 +1,55 @@
+<%= render "shared/header" %>
+
+<%= render "shared/flash_message" %>
+<div class=error_area>
+    <%= render "shared/error", obj: @room %>
+</div>
+
+<div class=rooms_new_container>
+    <div class=rooms_new_title>新規登録</div>
+    
+    <%= form_with model: @room do |f| %>
+        <div class=rooms_new_name_area>
+            <%= f.label :name,
+                class: "rooms_new_l" %>
+            <span class=red_asterisk>*</span>
+            <%= f.text_field :name,
+                placeholder: "施設名を入力してください",
+                class: "rooms_new_name_form" %>
+        </div>
+        <div class=rooms_new_info_area>
+            <%= f.label :info,
+                class: "rooms_new_l" %>
+            <span class=red_asterisk>*</span>
+            <%= f.text_area :info,
+                placeholder: "施設情報を入力してください",
+                class: "rooms_new_info_form" %>
+        </div>
+        <div class=rooms_new_price_area>
+            <%= f.label :price,
+                class: "rooms_new_l" %>
+            <span class=red_asterisk>*</span>
+            <%= f.text_field :price,
+                placeholder: "1日あたりの宿泊料金を入力してください",
+                class: "rooms_new_price_form" %>
+        </div>
+        <div class=rooms_new_address_area>
+            <%= f.label :address,
+                class: "rooms_new_l" %>
+            <span class=red_asterisk>*</span>
+            <%= f.text_field :address,
+                placeholder: "住所を入力してください",
+                class: "rooms_new_address_form"  %>
+        </div>
+        <div class=rooms_new_image_area>
+            <%= f.label :image,
+                class: "rooms_new_l" %>
+            <%= f.file_field :image, class: "rooms_new_image_form" %>
+        </div>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class=rooms_new_action>
+            <%= link_to "キャンセル", rooms_path, class: "rooms_new_cancel" %>
+            <%= f.submit "保存", class: "rooms_new_submit" %>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,86 @@
+.profile_title{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+.profile_container{
+    display: flex;
+}
+.profile_menu{
+    font-size: 20px;
+    margin-left: 80px;
+    margin-right: 50px;
+    border: solid 1px;
+    padding: 10px 100px 10px 10px;
+}
+.profile_menu p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.profile_menu a{
+    text-decoration: none;
+    color: black;
+}
+.profile_now{
+    color: orange;
+}
+.profile_contents{
+    width: 40%;
+    display: block;
+}
+.profile_contents a{
+    text-decoration: none;
+    padding: 8px;
+    color: whitesmoke;
+    background-color: blue;
+    border-radius: 5px;
+}
+.profile_table{
+    display: flex;
+    justify-content: space-between;
+}
+.profile_table_title{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+.profile_edit{
+    font-size: 20px;
+}
+.profile_data{
+    font-size: 20px;
+} 
+.profile_icon{
+    display: flex;
+}
+.profile_icon p{
+    font-size: 20px;
+}
+.profile_icon_d{
+    margin-left: 50px;
+}
+.profile_user_icon{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+.profile_name{
+    display: flex;
+}
+.profile_name p{
+    font-size: 20px;
+}
+.profile_name_d{
+    margin-left: 135px;
+}
+.profile_introduction{
+    display: flex;
+}
+.profile_introduction p{
+    font-size: 20px;
+}
+.profile_introduction_d{
+    margin-left: 90px;
+}

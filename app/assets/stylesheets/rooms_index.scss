@@ -1,0 +1,31 @@
+.rooms_index_container{
+    width: 94%;
+    margin-top: 20px;
+    margin-left: 3%;
+}
+.rooms_index_title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.rooms_index_table{
+    width: 100%;
+    text-align: left;
+}
+.rooms_index_image{
+    height: 60px;
+    width: 120px;
+}
+.rooms_index_about{
+    text-decoration: none;
+    color: blue;
+}
+.rooms_index_edit{
+    text-decoration: none;
+    color: blue;
+}
+.rooms_index_delete{
+    color: white;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+}

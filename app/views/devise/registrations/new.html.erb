@@ -1,0 +1,47 @@
+<%= render "shared/header" %>
+<div class=sign_up_container>
+  <h2 class=sign_up_title>新規登録</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div>
+      <%= f.label :name %><br />
+      <%= f.text_field :name,
+        class: "sign_up_form",
+        placeholder: "ユーザー名を入力してください",
+        autofocus: true %>
+    </div>
+
+    <div>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, 
+        class: "sign_up_form",
+        placeholder: "メールアドレスを入力してください",
+        autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div>
+      <%= f.label :password %><br />
+      <%= f.password_field :password,
+        class: "sign_up_form",
+        placeholder: "パスワードを入力してください",
+        autocomplete: "new-password" %>
+    </div>
+
+    <div>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation,
+        class: "sign_up_form",
+        placeholder: "確認用パスワードを入力してください",
+        autocomplete: "new-password" %>
+    </div>
+
+    <div class=action_sign_up>
+      <%= f.submit "新しいアカウントを作成", class: "sign_up_button" %>
+    </div>
+
+    <div class=action_sign_up>
+      <%= link_to "アカウントをお持ちの方はこちら", new_user_session_path %>
+  <% end %>
+<div>

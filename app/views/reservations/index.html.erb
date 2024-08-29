@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+
+<div class=reserv_index_search_area>
+    <%= form_with url: reservations_url, method: :get,
+        local: true do |f| %>
+        <%= f.text_field :address,
+            placeholder: "エリアを入力",
+            class: "reserv_index_search_by_area" %>
+        <%= f.text_field :info,
+            placeholder: "キーワードを入力",
+            class: "reserv_index_search_by_info" %>
+        <%= f.submit "検索", class: "reserv_index_search_by_area_b" %>
+    <% end %>
+</div>
+
+<%= render "shared/flash_message" %>
+
+<p class=number_of_rooms><%= @records.count %>件が見つかりました</p>
+
+<div class=reserv_index_container>
+    <% @records.each do |room| %>
+    <div class=reserv_index_data>
+        <p>
+            <% if room.image? %>
+                <%= image_tag room.image_url, class: "reserv_index_image" %>
+            <% else %>
+                <%= image_tag "default-room.png", class: "reserv_index_image" %>
+            <% end %>
+        </p>
+        <p class=reserv_index_name_d><%= room.name %></p>
+        <p class=reserv_index_address_d><%= room.address %></p>
+        
+        <div class=reserv_index_info_area>
+            <p class=reserv_index_info_d><%= room.info %></p>
+        </div>
+
+        <p class=reserv_index_price_d>¥<%= room.price %>〜</p>
+        <%= link_to "詳細はこちら",reservation_path(room.id), class:"reserv_index_to_show" %>
+    </div>
+    <% end %>
+</div>

@@ -1,0 +1,6 @@
+<div class=flash_area>
+    <% flash.each do |message_type, message| %>
+        <div class="flash_message <%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+</div>

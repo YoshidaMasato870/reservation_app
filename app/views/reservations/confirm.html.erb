@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+
+<div class=confirm_container>
+    <div class=confirm_title>予約内容の確認</div>
+    <div class=confirm_data_area>
+        <p>チェックイン</p>
+        <p><%= @reservation.check_in %></p>
+        </div>
+    <div class=confirm_data_area>
+        <p>チェックアウト</p>
+        <p><%= @reservation.check_out %></p>
+    </div>
+    <div class=confirm_data_area>
+        <p>日数</p>
+        <p><%= (@reservation.check_out-@reservation.check_in).to_i %>日</p>
+    </div>
+    <div class=confirm_data_area>
+        <p>人数</p>
+        <p><%= @reservation.persons %>人</p>
+    </div>
+    <div class=confirm_data_area>
+        <p>お支払い金額</p>
+        <p>¥<%= @reservation.price*@reservation.persons*(@reservation.check_out-@reservation.check_in).to_i %></p>
+    </div>
+    <div class=confirm_message>上記内容で正しければ「確定」ボタンを押して下さい</div>
+    <div class=confirm_submit_button_area>
+        <%= form_with model: @reservation do |f|%>
+            <%= f.hidden_field :name, value: @reservation.name %>
+            <%= f.hidden_field :info, value: @reservation.info %>
+            <%= f.hidden_field :image, value: @reservation.image %>
+            <%= f.hidden_field :price, value: @reservation.price %>
+            <%= f.hidden_field :check_in, value: @reservation.check_in %>
+            <%= f.hidden_field :check_out, value: @reservation.check_out %>
+            <%= f.hidden_field :persons, value: @reservation.persons %>
+            <%= f.hidden_field :user_id, value: @reservation.user_id %>
+            <%= f.hidden_field :room_id, value: @reservation.room_id %>
+            <%= f.submit "予約を確定" %>
+        <% end %>
+    </div>
+    <div class=confirm_cancel_area>
+        <%= link_to "キャンセル", :back %>
+    </div>
+</div>

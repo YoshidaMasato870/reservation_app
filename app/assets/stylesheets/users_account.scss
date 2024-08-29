@@ -1,0 +1,61 @@
+.account_title{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+.account_container{
+    display: flex;
+}
+.account_menu{
+    font-size: 20px;
+    margin-left: 80px;
+    margin-right: 50px;
+    border: solid 1px;
+    padding: 10px 100px 10px 10px;
+}
+.account_menu p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.account_menu a{
+    text-decoration: none;
+    color: black;
+}
+.account_now{
+    color: orange;
+}
+.account_contents{
+    width: 40%;
+    display: block;
+}
+.account_contents a{
+    text-decoration: none;
+    padding: 8px;
+    color: whitesmoke;
+    background-color: blue;
+    border-radius: 5px;
+}
+.account_table{
+    display: flex;
+    justify-content: space-between;
+}
+.account_table_title{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.account_edit{
+    font-size: 20px;
+}
+.account_info{
+    display: flex;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.account_info p{
+    margin-bottom: 10px;
+}
+.account_column{
+    margin-right: 150px;
+}
