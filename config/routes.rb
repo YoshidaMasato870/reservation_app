@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :reservations do
     collection do
       post :confirm
+      post :confirm_change
+      get :reserved
     end
   end
 end

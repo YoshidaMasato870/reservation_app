@@ -22,7 +22,8 @@
             <div class=reserv_edit_info><%= @reservation.info %></div>
                         
             <div>
-                <%= form_with model: @reservation do |f| %>
+                <%= form_with model: @reservation, url: confirm_change_reservations_path(id: @reservation.id),
+                 method: :post, local: true do |f| %>
                     <%= f.label :check_in %>
                         <span class=reserv_edit_red_asterisk>*</span></br>
                     <%= f.date_field :check_in, class: "reserv_edit_form" %></br>                    
@@ -32,11 +33,11 @@
                     <%= f.label :persons %>
                         <span class=reserv_edit_red_asterisk>*</span></br>
                     <%= f.text_field :persons, class: "reserv_edit_form" %></br>
-                    <%= f.hidden_field :created_at, value: Time.now %>
+                    <%= f.hidden_field :created_at ,value: Time.now %>
                     <%= f.submit "再予約する", class: "reserv_edit_submit" %></br>
                 <% end %>
             </div>
-            <%= button_to "キャンセル", new_reservation_path, method: :get, class: "reserv_edit_to_reserved" %>
+            <%= button_to "キャンセル", reserved_reservations_path, method: :get, class: "reserv_edit_to_reserved" %>
         </div>
     </div>
 </div>

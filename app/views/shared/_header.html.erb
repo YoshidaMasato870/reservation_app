@@ -14,7 +14,7 @@
                     <div class=dropdown_menu id=dropdownMenu>
                         <p><%= link_to "トップページに戻る", root_path %></p>
                         <p><%= link_to "施設の新規登録", new_room_path %></p>
-                        <p><%= link_to "予約済み一覧", new_reservation_path %></p>
+                        <p><%= link_to "予約済み一覧", reserved_reservations_path %></p>
                         <p><%= link_to "登録済み一覧", rooms_path %></p>
                         <p><%= link_to "アカウント設定", account_path %></p>
                         <p><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "header_logout" %></p>

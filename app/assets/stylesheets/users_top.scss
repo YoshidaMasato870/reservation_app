@@ -84,3 +84,11 @@
     font-size: 20px;
     text-align: center;
 }
+.top_flash_area{
+    position: absolute;
+    top: 90px;
+    width: 20%;
+    margin-left: 40%;
+    background-color: whitesmoke;
+    z-index: 1000;
+}

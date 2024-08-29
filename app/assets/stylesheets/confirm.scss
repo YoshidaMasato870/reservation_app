@@ -2,9 +2,25 @@
     width: 60%;
     margin-left: 20%;
     margin-top: 30px;
-    background-color: orange;
 }
 .confirm_title{
     font-size: 30px;
     margin-bottom: 30px;
+}
+.confirm_data_area{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.confirm_message{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.confirm_submit_button_area{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.confirm_cancel_area{
+    text-align: center;
 }
